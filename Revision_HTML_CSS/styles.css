@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    /* height: 50vh; */
+    background-color: #eee;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+    /* flex-flow: row wrap;  flex-direction + flex-wrap */
+}
+.item{
+    /* height: 100px; */
+    background-color: green;
+    padding: 20px;
+    margin: 5px;
+    color: #eee;
+    font-size: 20px;
+}
+.item:hover{
+    background-color: darkolivegreen;
+}
