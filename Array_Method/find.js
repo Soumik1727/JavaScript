@@ -5,4 +5,4 @@ const firstEle = scores.find((score) => {
     return score > 50;
 });
 
-console.log(firstEle);
+console.log(firstEle);  //output: 60

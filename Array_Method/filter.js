@@ -6,7 +6,7 @@ const filteredArray = scores.filter((score) => {
     return score > 30;
 });
 
-console.log(filteredArray);
+console.log(filteredArray); //  output: [ 40, 50 ]
 
 const users = [
     {name: 'Soumik1', premium: false },
@@ -21,3 +21,7 @@ const premiumUsers = users.filter((user) => {
 });
 
 console.log(premiumUsers);
+//OUTPUT: [
+//   { name: 'Soumik2', premium: true },
+//   { name: 'Soumik4', premium: true }
+// ]

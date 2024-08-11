@@ -7,7 +7,7 @@
 fruits = [ 'Apple', 'Banana', 'Guava', 'Watermelon', 'Mango', 'Banana', 'Guava', 'Watermelon', 'Mango', 'Banana', 'Guava',];
 
 console.log(fruits.indexOf("Guava"));       // output: 2
-console.log(fruits.lastIndexOf("Guava"));       // output: true
+console.log(fruits.lastIndexOf("Guava"));       // output: 10
 console.log(fruits.includes("Guava"));       // output: true
 
 console.log(fruits.lastIndexOf("Guava", 7));    // output: 6    // AS we are searching till index 7

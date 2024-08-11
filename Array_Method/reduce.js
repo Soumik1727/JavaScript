@@ -7,7 +7,7 @@ const result = scores.reduce((acc,curr) => {
     return acc;
 },0);    //Initial value of accumulator = 0;
 
-console.log(result);
+console.log(result);    // Output: 3
 
 const scoress = [
     {player: 'Soumik', score: 20},
@@ -24,4 +24,4 @@ const soumikTotal = scoress.reduce(( acc, curr) => {
     return acc;
 }, 0);
 
-console.log(soumikTotal);
+console.log(soumikTotal);      // Output:  190

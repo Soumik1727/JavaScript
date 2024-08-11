@@ -12,11 +12,12 @@ const products = [
     // At first we are filtering the products which price 
     // is more than 50 ,then displaying the product name and //price
 const filteredArray = products.filter( product => product.price > 50 );
+console.log(filteredArray);  // output: [ { name: 'Kumro', price: 60 }, { name: 'Dheros', price: 70 } ]
 
 const promos = filteredArray.map( product => {
     return `The ${product.name} is ${product.price /2} rupees`;
 });
-console.log(promos);
+console.log(promos);   // output: [ 'The Kumro is 30 rupees', 'The Dheros is 35 rupees' ]
 
 // Short version of the above 2 method
 

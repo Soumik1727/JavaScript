@@ -11,15 +11,20 @@ fruits = [ 'Apple', 'Banana', 'Guava', 'Watermelon', 'Mango'];
 
 fruits.map( (currValue, index, array) => {      // index = index of the arrah               
     console.log( `${index}: ${currValue}`);     // Array is the main array(fruits)
-});                             
-
+});
+// ...............Output.............                             
+// 0: Apple
+// 1: Banana
+// 2: Guava
+// 3: Watermelon
+// 4: Mango
 // -------------------------------------------------------------------------------------
 
 const myFruits = fruits.map( (currValue, index, array) => {                    
     return `${index}: ${currValue}`;     
 });     
 
-console.log(myFruits);
+console.log(myFruits);  // Output: [ '0: Apple', '1: Banana', '2: Guava', '3: Watermelon', '4: Mango' ]
 // -------------------------------------------------------------------------------------
 
 const prices = [10 ,20 ,30 ,40 ,50 ,5];
@@ -27,7 +32,7 @@ const prices = [10 ,20 ,30 ,40 ,50 ,5];
 const salesPrices = prices.map((price) => {
     return (price + ( price * 10 ) / 100);
 });
-console.log(salesPrices);
+console.log(salesPrices);       // Output: [ 11, 22, 33, 44, 55, 5.5 ]
 
 const products = [
     {namee: 'Alu', pricee:20},
@@ -47,10 +52,18 @@ const pricess = products.map((p) => {
 
 });
 console.log(pricess);
+// Output:
 
+// [
+//     { namee: 'Alu', pricee: 20 },
+//     { namee: 'Potol', pricee: 10 },
+//     { name: 'Kumro', price: 30 },
+//     { name: 'Lau', price: 40 },
+//     { name: 'Dheros', price: 35 }
+//   ]
 // -------------------------------------------------------------------------------------
 
 const words = ['sky', 'man', 'ball', 'egg', 'mouse'];
 
 const result = words.map( (e)=> e.toUpperCase())
-console.log(result);
+console.log(result);    // Output: [ 'SKY', 'MAN', 'BALL', 'EGG', 'MOUSE' ]

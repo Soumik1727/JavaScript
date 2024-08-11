@@ -9,7 +9,7 @@ function sayName(name){
 }
 sayName('Soumik');
 
-const sayAgain = function(){
+const sayAgain = function(){        // Regular function
     console.log("I'm the best developer.");
 };
 sayAgain();

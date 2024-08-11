@@ -7,5 +7,5 @@ for( let item in fruits){
 }
 console.log("==========FOR OF LOOP==========");
 for( let item of fruits){                       // for in loop
-    console.log(item);// output: 0,1,2,3,4
+    console.log(item);// output: Apple Banana Guava Watermelon Mango
 }
