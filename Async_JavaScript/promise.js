@@ -21,7 +21,7 @@ const getTodos = (resource ,callback) => {
     });
 };
 
-getTodos('./Async_JavaScript/json.json').then ( (data) => {
+getTodos('Async_JavaScript/json.json').then ( (data) => {
     console.log('Resolved: ',data);
 }).catch( (err) => {
     console.log('Error occured! ', err);
