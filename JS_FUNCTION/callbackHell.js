@@ -11,6 +11,7 @@ function getData(getId, getNextData){
     },3000);
 }
 
+// Callback Hell
 getData(1, () => {
     getData(2, ()=>{
         getData(3);

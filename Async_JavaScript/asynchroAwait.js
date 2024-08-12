@@ -1,6 +1,6 @@
 
-
-const getTodos = async() => {       // asynchronous functions always return promise
+            // asynchronous functions always return promise
+const getTodos = async() => {       
     
     const response = await fetch('json.json');
 

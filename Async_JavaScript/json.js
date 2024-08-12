@@ -5,6 +5,7 @@ const getTodos = (resource ,callback) => {
     request.addEventListener('readystatechange',() => {
         
         if( request.readyState === 4 && request.status === 200 ){
+                        // parse()=> it takes a JSON string and converts the string into a JS object.
             const data = JSON.parse(request.responseText);
             callback(undefined, data);
         }
