@@ -22,29 +22,10 @@ const getTodos = (resource) => {
 };
 
 getTodos('Async_JavaScript/json.json').then ( (data) => {
-    console.log('Resolved: ',data);
+    console.log('Promise 1 Resolved: ',data);
+    return getTodos('Async_JavaScript/json.json');
+}).then ( (data) => {
+    console.log('Promise 2 Resolved: ',data);
 }).catch( (err) => {
     console.log('Error occured! ', err);
 });
-
-    // Promises  // Basic   // Syntax
-    // Promises  // Basic   // Syntax
-
-// const getSomething = () => {
-
-//     return new Promise( (resolve, reject) => {
-//         // Fetch something
-//         resolve('Get something...');
-//     });
-// }
-// getSomething().then( (data) => {         
-//     console.log(data);
-// }, (err) => {
-//     console.log(err);
-// });
-
-// getSomething().then( data => {
-//     console.log(data);
-// }).catch( err => {
-//     console.log(err);
-// });
