@@ -26,13 +26,15 @@ getName("Soumik1")
 function getName2( name, getNextName){
     setTimeout(() => {
         console.log(name)
-        getNextName()
+        if(getNextName){        // If there exists next data then only call it 
+            getNextName();          // ( see innermost getName call below in callback hell)
+        }
     }, 2000)
 }
 getName2("Soumik1", ()=>{
     getName2("Soumik2", ()=>{
         getName2("Soumik3", ()=>{
-            console.log("THE END!")
+            getName("THE END!");            //  There is not next data
         })
     })
 })
@@ -42,7 +44,7 @@ getName2("Soumik1", ()=>{
             //         Soumik2
             //         Soumik3
             //         THE END!
-            
+
 //*****************************ANOTHER EXAMPLE OF CALLBACK*******************************//
 
 const userLeft = false;
