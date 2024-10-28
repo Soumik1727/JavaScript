@@ -1,27 +1,103 @@
+    
+//******************************************************************************** *//
+    // async await >> promise chains  >> callback 
 
-const getTodos = (callback) => {
-    const request = new XMLHttpRequest();
+// async await is better than promise chains
+// promise chains is better than callback
 
-    request.addEventListener('readystatechange',() => {
-        // console.log(request, readyState);
-        if( request.readyState === 4 && request.status === 200 ){
-            callback(undefined, request.responseText);
+// We generally use async await in modern JavaScript
+//******************************************************************************** *//
+
+const userLeft = false;
+const userWatchingNetflix = true;
+
+function watchTutorialCallback( callback, errorCallback){
+	
+	if( userLeft){
+		errorCallback({
+			name: "User left!",
+			message: "There is no user"
+		})
+	} else if(userWatchingNetflix){
+		errorCallback({
+			name: "\nUser Watching Netflix!",
+			message: "\nPlease stop wasting time"
+		})
+	}
+	else{
+		callback("\nThank you for watching tutorial")
+	}
+}
+watchTutorialCallback( (message) => {   // this callback for success
+	console.log("\nSuccess" +message)
+},(error) => {      // this callback is for error
+	console.log(error.name + " " +error.message)
+})
+
+// OUTPUT:  User Watching Netflix! 
+//          Please stop wasting time
+
+////////////// PROMISE VERSION OF ABOVE CALLBACK ////////////////
+
+const userLeft1 = false;
+const userWatchingNetflix1 = true;
+
+function watchTutorialPromise(){
+    return new Promise( (resolve, reject)=> {
+        if( userLeft1){
+            reject({
+                name: "User left!",
+                message: "There is no user"
+            })
+        } else if(userWatchingNetflix1){
+            reject({
+                name: "\nUser Watching Netflix!",
+                message: "\nPlease stop wasting time"
+            })
         }
-        else if(request.readyState === 4){
-            callback('could not get data.',undefined);
+        else{
+            resolve("\nThank you for watching tutorial")
         }
-    });
+    })
+}
+watchTutorialPromise().then((message) => {   // this promise for success
+	console.log("\nSuccess" +message)
+}).catch((error) => {      // this promise is for error
+	console.log(error.name + " " +error.message)
+})
+// OUTPUT:  User Watching Netflix! 
+//          Please stop wasting time
 
-    request.open('GET','https://jsonplaceholder.typicode.com/todos/');
-    request.send();
-};
+///****************************************************************************** */
 
-getTodos( (err, data) => {
-    console.log('Callback fired!');
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log(data);
-    }
-});
+const UploadVideo1 = new Promise( (resolve, reject) => {
+    resolve('Video 1 successfully uploaded!\n')
+})
+const UploadVideo2 = new Promise( (resolve, reject) => {
+    resolve('Video 2 successfully uploaded!\n')
+})
+const UploadVideo3 = new Promise( (resolve, reject) => {
+    resolve('Video 3 successfully uploaded!\n')
+})
+
+Promise.race([
+        UploadVideo1,
+        UploadVideo2, 
+        UploadVideo3
+]).then( (message) => {
+    console.log(message)
+}).catch(() => {
+    console.log("failed to upload!")
+})
+
+// OUTPUT: 
+//         [
+//             'Video 1 successfully uploaded!\n',
+//             'Video 2 successfully uploaded!\n',
+//             'Video 3 successfully uploaded!\n'
+//         ]
+
+
+// If I use Promise.race instead of Promise.all output would be
+// OUTPUT: 
+//         Video 1 successfully uploaded!

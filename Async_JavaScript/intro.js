@@ -1,6 +1,16 @@
-// Synchronous JavaScript
+
 
 // JavaScript is a single threaded language which means JS executes line by line
+
+    
+//******************************************************************************** *//
+    // async await >> promise chains  >> callback 
+
+// async await is better than promise chains
+// promise chains is better than callback
+
+// We generally use async await in modern JavaScript
+//******************************************************************************** *//
 
 console.log("One");
 console.log("Two");

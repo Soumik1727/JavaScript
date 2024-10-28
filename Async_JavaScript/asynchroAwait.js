@@ -1,5 +1,16 @@
+    
+//******************************************************************************** *//
+    // async await >> promise chains  >> callback 
 
-            // asynchronous functions always return promise
+// async await is better than promise chains
+// promise chains is better than callback
+
+// We generally use async await in modern JavaScript
+//******************************************************************************** *//
+
+          
+          
+          // asynchronous functions always return promise
 const getTodos = async() => {       
     
     const response = await fetch('json.json');
