@@ -19,22 +19,40 @@ const getData =(id) => {
 }
 getData(1) 
     .then( (result)=>{
-        return getData(2)
+        return getData(2)       // Promise 1( getData(1) ) will return another promise getData2
     })
     .then( ()=>{
-        return getData(3)
+        return getData(3)       // Promise 2( getData(1) ) will return another promise getData3
     })
     .then( ()=>{
         console.log("Success!");
     })
-    .catch( ()=>{
-    console.log("Failed!")
+    .catch( (err)=>{
+        console.log("Failed!"+err)
 })
 
-// OUTPUT: 
-// Data:  1
-// Success!Found!
-//*********************************************************************************//
+        // OUTPUT: 
+            // Data:  1
+            // Data:  2
+            // Data:  3
+            // Success!
+//******************* async-await version of the above program ******************************//
+    const getData1 =(id) => {
+        return new Promise( (resolve, reject) => {
+
+            setTimeout(()=>{
+                console.log("Data: ", id)
+                resolve("Found!")
+            },2000)
+        })
+    }
+
+    async function getAllData(){
+        await getData1(1);
+        await getData1(2);
+        await getData1(3);
+    }
+    getAllData()
 //*********************************************************************************//
 
 const getTodos = (resource) => {
