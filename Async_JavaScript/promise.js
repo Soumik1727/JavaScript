@@ -1,38 +1,34 @@
     
-//******************************************************************************** *//
-    // async await >> promise chains  >> callback hell
+// async await >> promise chains  >> callback hell
 
 // async await is better than promise chains
 // promise chains is better than callback
-
 // We generally use async await in modern JavaScript
 
 //**************************BASIC SYNTAX OF PROMISE*****************************//
 
-    const getData =(id, getNextId) => {
+    const getData =(id) => {
         return new Promise( (resolve, reject) => {
 
             setTimeout(()=>{
                 console.log("Data: ", id)
                 resolve("Found!")
-                if(getNextId){
-                    getNextId();
-                }
             },2000)
         })
     }
-getData(1).then( (result)=>{
-        console.log("Success!" + result)
-}).catch( ()=>{
-        console.log("Failed!")
-})
+        
+    getData(1).then( (result)=>{
+            console.log("Success!" + result)
+    }).catch( ()=>{
+            console.log("Failed!")
+    })
 
     // OUTPUT: 
     // Data:  1
     // Success!Found!
-//*********************************************************************************//
-//*********************************************************************************//
 
+
+//*********************************************************************************//
 
 // Very BASIC SYNTAX OF PROMISES
 // Very BASIC SYNTAX OF PROMISES
@@ -57,7 +53,7 @@ p.then( (message) =>{
 
 // output: Hello ! Resolved!
 
-
+//*********************************************************************************//
 
 const getTodos = (resource) => {
     
@@ -75,7 +71,6 @@ const getTodos = (resource) => {
             reject("Error getting resource!");
         }
     });
-
     request.open('GET',resource);
     request.send();
     });
@@ -86,25 +81,3 @@ getTodos('json.json').then ( (data) => {
 }).catch( (err) => {
     console.log('Error occured! ', err);
 });
-
-    // Promises  // Basic   // Syntax
-    // Promises  // Basic   // Syntax
-
-// const getSomething = () => {
-
-//     return new Promise( (resolve, reject) => {
-//         // Fetch something
-//         resolve('Get something...');
-//     });
-// }
-                                                                    // getSomething().then( (data) => {         
-                                                                    //     console.log(data);
-                                                                    // }, (err) => {
-                                                                    //     console.log(err);
-                                                                    // });
-
-// getSomething().then( data => {
-//     console.log(data);
-// }).catch( err => {
-//     console.log(err);
-// });
