@@ -21,7 +21,7 @@ getName("Soumik1")
             // OUTPUT:
             //     Soumik1
 
-//**************************BASIC EXAMPLE CALLBACK HELL**********************************//
+//*******************BASIC EXAMPLE : CALLBACK HELL OR PYRAMID OF DOOM ************************//
 
 function getName2( name, getNextName){
     setTimeout(() => {

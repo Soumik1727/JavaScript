@@ -6,11 +6,39 @@
 // promise chains is better than callback
 
 // We generally use async await in modern JavaScript
-//******************************************************************************** *//
+
+//**************************BASIC SYNTAX OF PROMISE*****************************//
+
+    const getData =(id, getNextId) => {
+        return new Promise( (resolve, reject) => {
+
+            setTimeout(()=>{
+                console.log("Data: ", id)
+                resolve("Found!")
+                if(getNextId){
+                    getNextId();
+                }
+            },2000)
+        })
+    }
+getData(1).then( (result)=>{
+        console.log("Success!" + result)
+}).catch( ()=>{
+        console.log("Failed!")
+})
+
+    // OUTPUT: 
+    // Data:  1
+    // Success!Found!
+//*********************************************************************************//
+//*********************************************************************************//
 
 
 // Very BASIC SYNTAX OF PROMISES
 // Very BASIC SYNTAX OF PROMISES
+
+            // resolve and reject are callbacks provided by JS
+
 let p = new Promise( (resolve, reject) => {
     let a = 1 + 2
     if( a == 3){
