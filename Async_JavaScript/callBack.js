@@ -8,6 +8,43 @@
 // We generally use async await in modern JavaScript
 //******************************************************************************** *//
 
+
+//*******************************BASIC EXAMPLE OF Asyncronous*******************************//
+
+function getName( name){
+    setTimeout(() => {
+        console.log(name)
+    }, 2000)
+}
+getName("Soumik1")
+
+            // OUTPUT:
+            //     Soumik1
+
+//**************************BASIC EXAMPLE CALLBACK HELL**********************************//
+
+function getName2( name, getNextName){
+    setTimeout(() => {
+        console.log(name)
+        getNextName()
+    }, 2000)
+}
+getName2("Soumik1", ()=>{
+    getName2("Soumik2", ()=>{
+        getName2("Soumik3", ()=>{
+            console.log("THE END!")
+        })
+    })
+})
+
+            // OUTPUT:
+            //         Soumik1
+            //         Soumik2
+            //         Soumik3
+            //         THE END!
+            
+//*****************************ANOTHER EXAMPLE OF CALLBACK*******************************//
+
 const userLeft = false;
 const userWatchingNetflix = true;
 
