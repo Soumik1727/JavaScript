@@ -21,9 +21,9 @@ const getTodos = (resource) => {
     });
 };
 
-getTodos('Async_JavaScript/json.json').then ( (data) => {
+getTodos('json.json').then ( (data) => {
     console.log('Promise 1 Resolved: ',data);
-    return getTodos('Async_JavaScript/json.json');
+    return getTodos('json.json');
 }).then ( (data) => {
     console.log('Promise 2 Resolved: ',data);
 }).catch( (err) => {

@@ -1,4 +1,26 @@
 
+// Very BASIC SYNTAX OF PROMISES
+// Very BASIC SYNTAX OF PROMISES
+let p = new Promise( (resolve, reject) => {
+    let a = 1 + 2
+    if( a == 3){
+        resolve( "Resolved!")
+    }
+    else{
+        reject("rejected!")
+    }
+});
+
+p.then( (message) =>{
+    console.log("Hello ! "+message)
+}).catch(() =>{
+    console.log("Hello ! "+message)
+})
+
+// output: Hello ! Resolved!
+
+
+
 const getTodos = (resource) => {
     
     return new Promise( (resolve, reject) => {
@@ -21,7 +43,7 @@ const getTodos = (resource) => {
     });
 };
 
-getTodos('Async_JavaScript/json.json').then ( (data) => {
+getTodos('json.json').then ( (data) => {
     console.log('Resolved: ',data);
 }).catch( (err) => {
     console.log('Error occured! ', err);
@@ -37,11 +59,11 @@ getTodos('Async_JavaScript/json.json').then ( (data) => {
 //         resolve('Get something...');
 //     });
 // }
-// getSomething().then( (data) => {         
-//     console.log(data);
-// }, (err) => {
-//     console.log(err);
-// });
+                                                                    // getSomething().then( (data) => {         
+                                                                    //     console.log(data);
+                                                                    // }, (err) => {
+                                                                    //     console.log(err);
+                                                                    // });
 
 // getSomething().then( data => {
 //     console.log(data);
