@@ -1,6 +1,6 @@
     
 //******************************************************************************** *//
-    // async await >> promise chains  >> callback 
+    // async await >> promise chains  >> callback hell
 
 // async await is better than promise chains
 // promise chains is better than callback

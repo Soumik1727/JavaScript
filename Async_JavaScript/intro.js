@@ -4,10 +4,10 @@
 
     
 //******************************************************************************** *//
-    // async await >> promise chains  >> callback 
+    // async await >> promise chains  >> callback hell
 
 // async await is better than promise chains
-// promise chains is better than callback
+// promise chains is better than callback 
 
 // We generally use async await in modern JavaScript
 //******************************************************************************** *//
