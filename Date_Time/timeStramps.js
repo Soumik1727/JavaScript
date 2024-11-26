@@ -1,7 +1,7 @@
 
 
 const now = new Date();
-const before = new Date('July 27 1999 01:43:00');
+const before = new Date('17 April, 2002 01:43:00');
 
 console.log(now.getTime());
         // The output is the miliseconds since the 1st Jan 1970;
